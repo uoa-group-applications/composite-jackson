@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>nz.ac.auckland</groupId>
+        <artifactId>uoa-parent</artifactId>
+        <version>1.8</version>
+    </parent>
+
+    <groupId>nz.ac.auckland.composite</groupId>
+    <artifactId>composite-jackson</artifactId>
+    <version>2.3-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>composite-jackson</name>
+
+    <description>
+        Collection of the standard Jackson dependencies
+    </description>
+
+    <properties>
+        <jackson-databind.version>[2.1.3]</jackson-databind.version>
+        <jackson-module-jaxb-annotations.version>[2.1.1]</jackson-module-jaxb-annotations.version>
+        <jackson-datatype-joda.version>[2.1.1]</jackson-datatype-joda.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>${jackson-module-jaxb-annotations.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+            <version>${jackson-datatype-joda.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>joda-time</groupId>
+                    <artifactId>joda-time</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+    <scm>
+        <url>https://github.com/uoa-group-applications/composite-jackson</url>
+        <connection>scm:git:git@github.com:uoa-group-applications/composite-jackson.git</connection>
+        <developerConnection>scm:git:git@github.com:uoa-group-applications/composite-jackson.git</developerConnection>
+    </scm>
+
+</project>
